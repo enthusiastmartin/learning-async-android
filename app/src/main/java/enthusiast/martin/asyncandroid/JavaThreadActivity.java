@@ -38,6 +38,14 @@ public class JavaThreadActivity extends AppCompatActivity {
     runJavaThreadExample();
   }
 
+  @Override
+  protected void onStop() {
+    if ( javaThread != null && javaThread.isAlive() ){
+      javaThread.stopIt();
+    }
+    super.onStop();
+  }
+
   @OnClick(R.id.sendbtn)
   public void sendMessage(){
     MessageQueue.queue.push(editText.getText().toString());
@@ -47,8 +55,13 @@ public class JavaThreadActivity extends AppCompatActivity {
   public void stopThread(){
     if ( javaThread != null ){
       javaThread.stopIt();
-      javaThread = null;
+      try {
+        javaThread.join();
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
       logState();
+      javaThread = null;
     }
   }
 
