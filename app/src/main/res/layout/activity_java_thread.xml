@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="enthusiast.martin.asyncandroid.MainActivity">
+
+    <TextView
+        android:id="@+id/thread_state_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thread State: "
+
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
+    <TextView
+        android:id="@+id/thread_state_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stopped"
+
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+
+        app:layout_constraintLeft_toRightOf="@id/thread_state_label"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/message_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Last Message: "
+
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/thread_state_label"
+
+        />
+    <TextView
+        android:id="@+id/message_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+
+        app:layout_constraintLeft_toRightOf="@id/message_label"
+        app:layout_constraintTop_toBottomOf="@id/thread_state_label"
+
+        />
+
+
+    <TextView
+        android:id="@+id/textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Java Thread Example!"
+
+        android:layout_marginTop="24dp"
+
+        app:layout_constraintTop_toBottomOf="@id/message_label"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <EditText
+        android:id="@+id/edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textview"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <Button
+        android:id="@+id/sendbtn"
+        android:text="Send Message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/edittext"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>
