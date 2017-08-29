@@ -8,6 +8,8 @@ import android.util.Log;
 
 public class JavaThread extends Thread {
 
+  private boolean isStopping = false;
+
   private static final String TAG = JavaThread.class.getName();
 
   private MessageHandler messageHandler;
@@ -21,26 +23,20 @@ public class JavaThread extends Thread {
   @Override
   public void run() {
     super.run();
-    Log.i(TAG, "Java Thread + " +Thread.currentThread().getName());
+    Log.i(TAG, "Java Thread + " + Thread.currentThread().getName());
     String msg;
-    while ( true ){
-      while ( ( msg = MessageQueue.queue.poll()) != null) {
-        Log.d("BLABLA", " Message " + msg);
-        if ( messageHandler != null ){
+    while (!isStopping) {
+      while ((msg = MessageQueue.queue.poll()) != null) {
+        if (messageHandler != null) {
           messageHandler.sendMessage(msg);
         }
       }
     }
-
-    /*
-    try {
-      Thread.sleep(5000);
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    }
-    */
   }
 
-
-
+  public void stopIt(){
+    synchronized (this){
+      isStopping = true;
+    }
+  }
 }
