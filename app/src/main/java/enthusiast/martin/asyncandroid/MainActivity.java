@@ -21,4 +21,11 @@ public class MainActivity extends AppCompatActivity {
   public void runJavaThreadExample(){
     startActivity(new Intent(this, JavaThreadActivity.class));
   }
+
+  @OnClick(R.id.runnable_btn)
+  public void runRunnableExample(){
+    startActivity(new Intent(this, RunnableExampleActivity.class));
+  }
 }
+
+
