@@ -21,6 +21,7 @@
                   />
         <activity android:name=".RunnableExampleActivity"/>
         <activity android:name=".RunnableEXecutorExampleActivity"/>
+        <activity android:name=".CoreExample"/>
     </application>
 
 </manifest>

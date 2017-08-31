@@ -31,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
   public void runExecutorEXample(){
     startActivity(new Intent(this, RunnableEXecutorExampleActivity.class));
   }
+  @OnClick(R.id.core_btn)
+  public void runCoreExample(){
+    startActivity(new Intent(this, CoreExample.class));
+  }
 }
 
 
