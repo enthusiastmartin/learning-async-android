@@ -20,6 +20,7 @@
         <activity android:name=".JavaThreadActivity"
                   />
         <activity android:name=".RunnableExampleActivity"/>
+        <activity android:name=".RunnableEXecutorExampleActivity"/>
     </application>
 
 </manifest>

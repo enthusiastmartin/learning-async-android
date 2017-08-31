@@ -24,7 +24,7 @@ public class RunnableExample implements Runnable {
     Log.d(RunnableExample.class.getName(), "Runnable " + Thread.currentThread().getName());
 
     String msg;
-    while ( true ){
+    while (!Thread.currentThread().isInterrupted()){
       while ((msg = RunnableQueue.queue.poll()) != null) {
         handler.sendMessage(msg);
       }
