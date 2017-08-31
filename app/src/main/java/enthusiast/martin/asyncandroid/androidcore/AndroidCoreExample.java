@@ -21,7 +21,7 @@ public class AndroidCoreExample {
   }
 
   public void stopIt(){
-
+    myThread.interrupt();
   }
 
   public void submitMessage(String msg){
