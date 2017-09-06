@@ -7,13 +7,12 @@ import android.os.Message;
  * Created by martin on 8/30/17.
  */
 
-public class AndroidCoreExample {
+public class SimpleThreadExample {
 
-  private MyHandlerThread myThread;
+  private MyThread myThread;
 
-  public AndroidCoreExample(Handler handler){
-    //myThread = new MyThread(handler);
-    myThread = new MyHandlerThread(handler);
+  public SimpleThreadExample(Handler handler){
+    myThread = new MyThread(handler);
   }
 
   public void runIt(){

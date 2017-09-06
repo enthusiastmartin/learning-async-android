@@ -10,7 +10,7 @@ import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import enthusiast.martin.asyncandroid.androidcore.AndroidCoreExample;
+import enthusiast.martin.asyncandroid.androidcore.HandlerThreadExample;
 
 /**
  * Created by martin on 8/30/17.
@@ -24,7 +24,7 @@ public class CoreExample extends AppCompatActivity{
   @BindView(R.id.edittext)
   EditText editText;
 
-  private AndroidCoreExample androidCoreExample;
+  private HandlerThreadExample androidCoreExample;
 
   private Handler mainHandler;
 
@@ -41,7 +41,7 @@ public class CoreExample extends AppCompatActivity{
       }
     };
 
-    androidCoreExample = new AndroidCoreExample(mainHandler);
+    androidCoreExample = new HandlerThreadExample(mainHandler);
 
     ButterKnife.bind(this);
   }
