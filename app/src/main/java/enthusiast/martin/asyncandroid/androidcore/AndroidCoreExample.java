@@ -9,11 +9,11 @@ import android.os.Message;
 
 public class AndroidCoreExample {
 
-  private MyThread myThread;
-
+  private MyHandlerThread myThread;
 
   public AndroidCoreExample(Handler handler){
-    myThread = new MyThread(handler);
+    //myThread = new MyThread(handler);
+    myThread = new MyHandlerThread(handler);
   }
 
   public void runIt(){
