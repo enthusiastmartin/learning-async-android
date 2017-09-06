@@ -28,6 +28,6 @@ public class AndroidCoreExample {
     Message message = Message.obtain();
     message.obj = msg;
 
-    myThread.handler.sendMessage(message);
+    myThread.getHandler().sendMessage(message);
   }
 }
